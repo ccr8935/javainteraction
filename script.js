@@ -1,6 +1,6 @@
 let myButton = document.getElementById("button");
 let output = document.getElementById("output");
-let input = document.getElementById("input");
+let inputElement = document.getElementById("input");
 
 let songs = ["Chateau Lobby #4 (in C for Two Virgins) by Father John Misty",
 	"Lost in the Supermarket by The Clash",
@@ -25,15 +25,15 @@ let fonts = ["Helvetica",
 	]
 
 myButton.addEventListener("click", function(){
-	let inputText = input.value;
-	generate(inputText)
+	let currentInput = inputElement.value
+	generate(currentInput)
 	restyle()
 });
-output.style.fontSize = "x-large"
-function generate(userInput){
+output.style.fontSize = "xx-large"
+function generate(currentInput){
 	let randomIndex = Math.floor(Math.random()* songs.length);
 	let randomText = songs[randomIndex];
-	output.innerText = "You should add" + " " + randomText + " " + "to your playlist!"
+	output.innerText = currentInput + " " + "is a good word. You should add" + " " + randomText + " " + "to your playlist!"
 }
 
 function restyle() {
